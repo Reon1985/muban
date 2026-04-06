@@ -1,0 +1,7 @@
+interface:
+  display_name: "AI文档运营总骨架"
+  short_description: "跨项目复用的文档优先预览优先与独立复核总流程"
+  default_prompt: "Use $ai-doc-ops-core to classify this repository task, keep document-first and preview-first sequencing, and coordinate the main-agent plus independent-review loop before deeper work."
+
+policy:
+  allow_implicit_invocation: true

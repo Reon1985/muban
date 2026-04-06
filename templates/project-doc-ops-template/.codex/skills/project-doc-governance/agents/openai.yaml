@@ -1,0 +1,7 @@
+interface:
+  display_name: "项目文档治理与实施门禁"
+  short_description: "按项目文档分层路由正式文档并执行实施门禁与评审闭环"
+  default_prompt: "Use $project-doc-governance to route a formal document correctly, enforce preview-first and implementation-gate rules, and review the output before it becomes the next-stage baseline."
+
+policy:
+  allow_implicit_invocation: true

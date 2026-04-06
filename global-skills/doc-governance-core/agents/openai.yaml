@@ -1,0 +1,7 @@
+interface:
+  display_name: "文档治理门禁骨架"
+  short_description: "跨项目复用的正式文档路由实施门禁与关键产出复核规则"
+  default_prompt: "Use $doc-governance-core to route a formal document, enforce preview-first and implementation-gate sequencing, and require independent review before a key output becomes the next-stage baseline."
+
+policy:
+  allow_implicit_invocation: true

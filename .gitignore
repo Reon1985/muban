@@ -1,0 +1,6 @@
+/.DS_Store
+/.codex/
+/.learnings/
+/.project_state.json
+__pycache__/
+*.pyc
