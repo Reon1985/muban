@@ -1,0 +1,10 @@
+{
+  "project_info": {
+    "name": "__PROJECT_NAME__",
+    "current_version": "v1.0",
+    "last_update": "2026-04-06"
+  },
+  "active_tasks": [],
+  "archived_tasks": [],
+  "global_constraints": "doc/01-规范标准/文档治理/AI阅读路径规范/current/开发规范.md"
+}

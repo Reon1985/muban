@@ -1,57 +1,63 @@
-# Codex AI Doc Ops Template Repo
+# AI Project Management System Template Repo
 
-这个仓库用于把“全局 core skills + 项目 adapter skills + 最小文档模板”一起打包，方便你：
+这个仓库是“AI 项目管理 2.0 体系”的可迁移模板仓库，目标是让你在另一台电脑或另一个项目里，直接复制并落地以下完整能力：
 
-- 传到 GitHub
-- 在另一台电脑安装全局 skills
-- 在另一个项目里快速初始化这套文档运营体系
+- 全局 core skills
+- 项目 adapter skills
+- 项目专属 hooks 与脚本入口
+- 状态机与交接机制
+- 文档分层结构与入口导航
+- AI 执行增强层规则、模板、SOP 与升级日志骨架
 
-## 目录结构
+## 1. 仓库结构
 
 - `global-skills/`
-  - 可直接安装到 `~/.codex/skills/` 的全局 core skills
-- `templates/project-doc-ops-template/`
-  - 新项目可用的项目 adapter skills
-  - 最小必需文档骨架
+  放可直接安装到 `~/.codex/skills/` 的全局 core skills
+- `templates/project-system-template/`
+  放完整项目模板，包含项目 skills、hooks、文档体系、状态机与脚本
 - `scripts/install_global_skills.sh`
-  - 把 `global-skills/` 安装到本机 Codex 全局技能目录
+  把 `global-skills/` 安装到当前电脑的 `~/.codex/skills/`
 - `scripts/bootstrap_project_template.py`
-  - 把项目模板初始化到目标仓库，并替换路径占位符
+  把完整项目模板初始化到目标仓库，并替换项目名与绝对路径占位符
 
-## 快速使用
+## 2. 推荐使用顺序
 
-### 1. 在新电脑安装全局 skills
+### 2.1 新电脑安装全局 skills
 
 ```bash
-cd /path/to/this-repo
+cd /path/to/muban
 ./scripts/install_global_skills.sh
 ```
 
-### 2. 在新项目初始化项目 adapter 和文档骨架
+### 2.2 给一个新项目初始化完整体系
 
 ```bash
-cd /path/to/this-repo
-python3 scripts/bootstrap_project_template.py \
-  --target /absolute/path/to/your-project \
-  --project-name your-project
+cd /path/to/muban
+python3 scripts/bootstrap_project_template.py   --target /absolute/path/to/your-project   --project-name your-project
 ```
 
-如果目标仓库里已经有同名文件，可以加：
+如果目标仓库已存在同名文件，允许覆盖时加：
 
 ```bash
-python3 scripts/bootstrap_project_template.py \
-  --target /absolute/path/to/your-project \
-  --project-name your-project \
-  --force
+python3 scripts/bootstrap_project_template.py   --target /absolute/path/to/your-project   --project-name your-project   --force
 ```
 
-## 分层规则
+## 3. 当前模板包含什么
 
-- 全局 core skills 负责通用方法论
-- 项目 adapter skills 负责仓库路径、文档入口、目录结构和项目细则
+当前模板已经包含：
 
-维护原则：
+1. `ai-doc-ops-core`
+2. `doc-governance-core`
+3. `project-ai-doc-ops`
+4. `project-doc-governance`
+5. 轻量 hook 与轻量自动学习脚本
+6. 测试报告驱动问题批量收口规则与发版门禁
+7. 文档分层、状态机、版本包、升级日志骨架
+8. AI 执行增强层 `6` 模块相关长期规则与模板
 
-- 通用规则升级，优先更新 `global-skills/`
-- 项目规则升级，优先更新 `templates/project-doc-ops-template/`
-- 跨层规则，再双向同步
+## 4. 维护原则
+
+1. 通用方法论优先更新 `global-skills/`
+2. 项目级执行规则优先更新 `templates/project-system-template/`
+3. 任何 hook、规则、模板或治理机制升级，优先同步到模板仓库，再同步到业务仓库
+4. 业务正文、业务测试报告、业务部署细节不要带回模板仓库，模板仓库只保留可迁移骨架

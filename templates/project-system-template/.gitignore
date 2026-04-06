@@ -1,0 +1,5 @@
+.DS_Store
+.claude/tmp_context_*.md
+.claude/tmp_ai_learning/*.md
+!.claude/tmp_ai_learning/README.md
+!.claude/tmp_ai_learning/.gitignore
