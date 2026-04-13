@@ -9,3 +9,4 @@
 3. 需要正式文档时进入文档治理层
 4. 需要代码时先确认实施文档
 5. 需要部署、发版、测试时优先进入 `02-标准操作手册/`
+6. 如果任务直接修改 AI 执行层，再进入 `.codex/skills/README.md`、`.claude/skills/README.md` 和 `.claude/scripts/ai-exec-hooks/README.md`

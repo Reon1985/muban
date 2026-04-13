@@ -18,19 +18,20 @@
 
 必须确认已阅读：
 
-- [ ] [CLAUDE.md](__PROJECT_ROOT__/CLAUDE.md)
-- [ ] [项目文档总览.md](__PROJECT_ROOT__/doc/项目文档总览.md)
-- [ ] [WORKFLOW.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/WORKFLOW.md)
-- [ ] [开发规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/开发规范.md)
+- [ ] [CLAUDE.md](../../../CLAUDE.md)
+- [ ] [项目文档总览.md](../../../doc/项目文档总览.md)
+- [ ] [当前生效版本说明.md](../../../doc/00-入口/当前生效版本说明.md)
+- [ ] [WORKFLOW.md](../../../doc/01-规范标准/文档治理/AI阅读路径规范/current/WORKFLOW.md)
+- [ ] [开发规范.md](../../../doc/01-规范标准/文档治理/AI阅读路径规范/current/开发规范.md)
 - [ ] 当前任务对应目录的 `README.md`
 - [ ] 当前任务对应的最新实施文档
 - [ ] 当前模块相关正式文档
 
 按需补读：
 
-- [ ] [全局Agent与Skill说明.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/全局Agent与Skill说明.md) — 如需选择 agent
-- [ ] [框架用户组织角色数据权限架构说明.md](__PROJECT_ROOT__/doc/01-规范标准/后端/权限与数据范围规范/current/框架用户组织角色数据权限架构说明.md) — 如涉及权限
-- [ ] [前端.md](__PROJECT_ROOT__/doc/00-入口/项目定位与环境/前端.md) / [后端.md](__PROJECT_ROOT__/doc/00-入口/项目定位与环境/后端.md) — 如需定位代码
+- [ ] [全局Agent与Skill说明.md](../../../doc/01-规范标准/文档治理/AI阅读路径规范/current/全局Agent与Skill说明.md) — 如需选择 agent
+- [ ] [框架用户组织角色数据权限架构说明.md](../../../doc/01-规范标准/后端/权限与数据范围规范/current/框架用户组织角色数据权限架构说明.md) — 如涉及权限
+- [ ] [前端.md](../../../doc/00-入口/项目定位与环境/前端.md) / [后端.md](../../../doc/00-入口/项目定位与环境/后端.md) — 如需定位代码
 
 ### 2. 实施文档检查
 

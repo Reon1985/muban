@@ -1,6 +1,6 @@
 ---
 name: project-doc-governance
-description: "__PROJECT_NAME__-repository adapter for the global doc-governance-core workflow. Use after or together with doc-governance-core when creating or updating formal documents in this repository, deciding where a document belongs, applying the repository's layered doc structure, or enforcing the repository-specific implementation and review gate."
+description: "__PROJECT_NAME__-repository adapter for the global doc-governance-core workflow. Use after or together with doc-governance-core when creating or updating formal documents in this repository, deciding where a document belongs, applying the repository's layered doc structure, or enforcing the repository-specific implementation review gate."
 ---
 
 # Project Doc Governance
@@ -33,6 +33,13 @@ Read these files first:
 When the task involves implementation-agent selection, independent-review-agent selection, or agent / skill rule updates, also read:
 
 - [doc/01-规范标准/文档治理/AI阅读路径规范/current/全局Agent与Skill说明.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/全局Agent与Skill说明.md)
+- [doc/01-规范标准/文档治理/AI阅读路径规范/current/文档与skill去重治理规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/文档与skill去重治理规范.md)
+
+When the task directly changes repository-local skills or hooks, also read:
+
+- [.codex/skills/README.md](__PROJECT_ROOT__/.codex/skills/README.md)
+- [.claude/skills/README.md](__PROJECT_ROOT__/.claude/skills/README.md)
+- [.claude/scripts/ai-exec-hooks/README.md](__PROJECT_ROOT__/.claude/scripts/ai-exec-hooks/README.md)
 
 When the task involves document inventory, migration, or historical references, also read:
 
@@ -83,6 +90,9 @@ Within this repository, classify every request into one of three types before pr
 21. If the task involves agent / skill selection or agent / skill rule changes, consult [doc/01-规范标准/文档治理/AI阅读路径规范/current/全局Agent与Skill说明.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/全局Agent与Skill说明.md) as needed.
 22. If new reusable development rules are discovered during implementation, write them back into the correct standard doc and update [doc/05-升级日志/AI执行体系/AI能力与规则升级日志.md](__PROJECT_ROOT__/doc/05-升级日志/AI执行体系/AI能力与规则升级日志.md) when the execution system itself changed.
 23. If formal code work exceeded `8` minutes, complete an efficiency retrospective and route long-lived rules back into standards or SOPs before handoff.
+24. Do not let project skills become the only place where long-lived governance rules exist; if a rule affects future decisions, keep it in formal docs.
+25. When a task changes project skill boundaries, default prompts, routing guidance, or authority-source rules, update the corresponding formal docs in the same batch.
+26. When a task changes repository hooks, also check whether hook README, hook mount config, and the AI execution upgrade log need updates in the same batch.
 
 ## Document Routing
 
@@ -95,6 +105,28 @@ Minimum routing rules:
 - Problems, risks, troubleshooting, and limitations go to `04-问题总结/`
 - Change evidence and execution evolution go to `05-升级日志/`
 - Raw materials, templates, screenshots, and historical references go to `99-参考与归档/`
+
+## Document vs Skill Boundary
+
+Use formal docs for:
+
+- long-lived governance rules
+- routing and naming standards
+- approval gates and review standards
+- default agent / skill selection guidance
+
+Use project skills for:
+
+- repository-specific entry routing
+- minimal reading order
+- execution shortcuts and task classification
+- concise adapter logic that points back to the formal docs
+
+If both are involved:
+
+- the document remains the authority source
+- the skill mirrors only the minimal execution-facing subset
+- both must stay synchronized
 
 ## Code Change Gate
 
@@ -116,9 +148,12 @@ Before finishing a task, confirm:
 - The review result clearly states omissions, conflicts, implementation readiness, and whether the task can advance
 - If code was requested, an approved implementation document exists
 - If code was changed, the development-stage standard doc was checked first
+- If project skill guidance changed, the corresponding `SKILL.md`, formal docs, and `agents/openai.yaml` consistency were checked
+- If repository-local skills or hooks changed, the `.codex/skills/README.md`, `.claude/skills/README.md`, `.claude/scripts/ai-exec-hooks/README.md`, and AI execution upgrade log were checked
 
 ## Resources
 
 ### references/
+
 - `document-routing.md`: directory, naming, and versioning rules
 - `change-control.md`: implementation document gate, preview-first flow, and key-output review workflow

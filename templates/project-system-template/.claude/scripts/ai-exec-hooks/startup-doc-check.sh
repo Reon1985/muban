@@ -28,6 +28,9 @@ FILES=(
   "doc/00-入口/README.md"
   "doc/00-入口/AI执行入口.md"
   "doc/00-入口/当前生效版本说明.md"
+  ".codex/skills/README.md"
+  ".claude/skills/README.md"
+  ".claude/scripts/ai-exec-hooks/README.md"
   "doc/03-版本包/${VERSION}/README.md"
 )
 

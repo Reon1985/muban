@@ -24,6 +24,7 @@ CLAUDE.md
 3. 文档优先：没有实施文档，不默认改代码
 4. 探索必回填：新结论必须回写正式文档
 5. SOP 优先：部署、发版、测试优先读 `02-标准操作手册/`
+6. AI 执行层联动：如果修改 `.codex/skills/`、`.claude/skills/`、`.claude/scripts/ai-exec-hooks/` 或 AI 治理文档，默认同步检查它们的 README 和升级日志
 
 ## 4. 当前仓库结构速查
 
@@ -47,3 +48,9 @@ doc/
 ## 5. 一句话使用方式
 
 先读本文件，再进入 `doc/README.md` 和 `doc/00-入口/README.md`，后续所有正式结论默认进入分层文档体系。
+
+如果本轮任务直接修改 AI 执行体系，再补读：
+
+1. `.codex/skills/README.md`
+2. `.claude/skills/README.md`
+3. `.claude/scripts/ai-exec-hooks/README.md`

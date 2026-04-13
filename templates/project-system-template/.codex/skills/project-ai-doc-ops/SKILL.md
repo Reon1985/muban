@@ -33,8 +33,21 @@ Read these files first:
 - [doc/00-入口/README.md](__PROJECT_ROOT__/doc/00-入口/README.md)
 - [doc/00-入口/AI执行入口.md](__PROJECT_ROOT__/doc/00-入口/AI执行入口.md)
 - [doc/00-入口/当前生效版本说明.md](__PROJECT_ROOT__/doc/00-入口/当前生效版本说明.md)
+- [doc/01-规范标准/文档治理/AI阅读路径规范/current/SOUL.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/SOUL.md)
+- [doc/01-规范标准/文档治理/AI阅读路径规范/current/AGENTS.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/AGENTS.md)
 - [doc/01-规范标准/文档治理/AI阅读路径规范/current/WORKFLOW.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/WORKFLOW.md)
 - [doc/01-规范标准/文档治理/AI阅读路径规范/current/AI协作与项目运作体系说明.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/AI协作与项目运作体系说明.md)
+
+When the task involves agent / skill selection, skill governance, or authority-source decisions, also read:
+
+- [doc/01-规范标准/文档治理/AI阅读路径规范/current/全局Agent与Skill说明.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/全局Agent与Skill说明.md)
+- [doc/01-规范标准/文档治理/AI阅读路径规范/current/文档与skill去重治理规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/文档与skill去重治理规范.md)
+
+When the task directly changes the repository AI execution layer, also read:
+
+- [.codex/skills/README.md](__PROJECT_ROOT__/.codex/skills/README.md)
+- [.claude/skills/README.md](__PROJECT_ROOT__/.claude/skills/README.md)
+- [.claude/scripts/ai-exec-hooks/README.md](__PROJECT_ROOT__/.claude/scripts/ai-exec-hooks/README.md)
 
 Load detailed entry references only when needed:
 
@@ -76,6 +89,7 @@ Apply the global core workflow with these repository specifics:
 5. for existing-page changes, keep the work in preview until UI is confirmed
 6. for code work, require the approved implementation document plus the current development-stage rules
 7. finish with validation, backfill, and change-log updates when required
+8. if the task changes project-local skills, hooks, or AI execution entry docs, treat it as an execution-layer governance change and check the repository AI layer indexes together
 
 ## Non-Negotiable Rules
 
@@ -84,6 +98,8 @@ Apply the global core workflow with these repository specifics:
 3. Do not jump into database or API design before page rules and UI confirmation for preview-first tasks.
 4. Do not edit code before there is an approved implementation document.
 5. If AI, rule, or skill behavior changes, update the formal rule docs and the AI execution upgrade log.
+6. If this skill's routing, boundaries, or default invocation guidance change, also check whether [全局Agent与Skill说明.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/全局Agent与Skill说明.md) and [文档与skill去重治理规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/文档与skill去重治理规范.md) need updates.
+7. If the task changes repository-local skills or hooks, also sync [.claude/skills/README.md](__PROJECT_ROOT__/.claude/skills/README.md) and [.claude/scripts/ai-exec-hooks/README.md](__PROJECT_ROOT__/.claude/scripts/ai-exec-hooks/README.md) as needed.
 
 ## Coordination Model
 
@@ -94,6 +110,15 @@ Default collaboration model for this repository:
 3. the main thread sets boundaries, watches the critical path, and merges the result
 4. do not let the main agent review itself through a near-identical role
 5. do not over-process tiny, non-semantic edits
+
+## Skill Boundary
+
+Use this skill as a repository adapter, not as a hidden rules database.
+
+1. Long-lived project rules stay in formal docs
+2. This skill should stay focused on entry routing, task classification, and next-step decisions
+3. If a new rule would affect future task judgment, update the formal docs first or in the same change
+4. Prefer references files over growing SKILL.md into a second copy of the governance docs
 
 ## When To Load The Governance Skill
 

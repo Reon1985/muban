@@ -331,6 +331,7 @@
 4. 轻量 hook 设计边界规范
 5. 轻量自动学习与自动进化边界规范
 6. 文档 / skill 去重治理规范
+7. 文档、SOP、模板与 Skill 职责边界规范
 
 ### 7.3 Phase C：模板层落地
 
@@ -423,9 +424,10 @@
 3. [项目级知识隔离规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/项目级知识隔离规范.md)
 4. [轻量hook清单设计规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/轻量hook清单设计规范.md)
 5. [文档与skill去重治理规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/文档与skill去重治理规范.md)
-6. [复杂任务蓝图模板.md](__PROJECT_ROOT__/doc/02-标准操作手册/AI执行模板/复杂任务蓝图模板.md)
-7. [新项目接入模板.md](__PROJECT_ROOT__/doc/02-标准操作手册/AI执行模板/新项目接入模板.md)
-8. [AI项目管理增强层首轮试点落地清单.md](__PROJECT_ROOT__/doc/02-标准操作手册/AI执行试点/AI项目管理增强层首轮试点落地清单.md)
+6. [文档、SOP、模板与Skill职责边界规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/文档、SOP、模板与Skill职责边界规范.md)
+7. [复杂任务蓝图模板.md](__PROJECT_ROOT__/doc/02-标准操作手册/AI执行模板/复杂任务蓝图模板.md)
+8. [新项目接入模板.md](__PROJECT_ROOT__/doc/02-标准操作手册/AI执行模板/新项目接入模板.md)
+9. [AI项目管理增强层首轮试点落地清单.md](__PROJECT_ROOT__/doc/02-标准操作手册/AI执行试点/AI项目管理增强层首轮试点落地清单.md)
 
 ---
 

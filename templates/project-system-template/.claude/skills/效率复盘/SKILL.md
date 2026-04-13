@@ -157,7 +157,7 @@
 
 ### 录入位置
 
-- [效率提升.md](__PROJECT_ROOT__/doc/05-升级日志/AI执行体系/效率提升.md)
+- [效率提升.md](../../../doc/05-升级日志/AI执行体系/效率提升.md)
 
 ### 录入格式
 
@@ -196,9 +196,9 @@
 
 | 规则类型 | 沉淀路径 |
 |---------|---------|
-| 项目级开发规则 | [开发规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/开发规范.md) |
-| AI / rule / skill 执行机制优化 | [AI能力与规则升级日志.md](__PROJECT_ROOT__/doc/05-升级日志/AI执行体系/AI能力与规则升级日志.md) |
-| agent / skill 选型口径变化 | [全局Agent与Skill说明.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/全局Agent与Skill说明.md) |
+| 项目级开发规则 | [开发规范.md](../../../doc/01-规范标准/文档治理/AI阅读路径规范/current/开发规范.md) |
+| AI / rule / skill 执行机制优化 | [AI能力与规则升级日志.md](../../../doc/05-升级日志/AI执行体系/AI能力与规则升级日志.md) |
+| agent / skill 选型口径变化 | [全局Agent与Skill说明.md](../../../doc/01-规范标准/文档治理/AI阅读路径规范/current/全局Agent与Skill说明.md) |
 
 ### 沉淀后更新
 

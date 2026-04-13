@@ -50,10 +50,12 @@ python3 scripts/bootstrap_project_template.py   --target /absolute/path/to/your-
 2. `doc-governance-core`
 3. `project-ai-doc-ops`
 4. `project-doc-governance`
-5. 轻量 hook 与轻量自动学习脚本
-6. 测试报告驱动问题批量收口规则与发版门禁
-7. 文档分层、状态机、版本包、升级日志骨架
-8. AI 执行增强层 `6` 模块相关长期规则与模板
+5. `.codex/skills/README.md` 与项目 adapter skill 索引
+6. `.claude/skills/README.md` 与项目辅助 skill 体系
+7. `pre-doc-skill-sync-check.sh` 在内的轻量 hook 与轻量自动学习脚本
+8. 测试报告驱动问题批量收口规则、问题修复模板与发版门禁
+9. 文档分层、状态机、版本包、升级日志骨架
+10. AI 执行增强层长期规则、模板与试点资料
 
 ## 4. 维护原则
 

@@ -12,19 +12,20 @@
 
 ## 2. 当前全局安装总览
 
-当前 `~/.codex/skills` 中，和你主动安装相关的全局 skill 主要分成三类：
+当前机器上的 Agent / Skill 入口分成四层：
 
-- `gstack-*`：`26` 个
-- `agency-*`：`156` 个
-- `.system`：Codex 自带系统 skills，`4` 个
+1. `~/.claude/skills/gstack`：`gstack` 流程技能套件，当前目录下共有 `32` 份 `SKILL.md`（含 `1` 个总入口和 `31` 个子技能）
+2. `~/.skillshub/agency-*`：`agency-*` 专家角色技能，当前共 `156` 个
+3. `~/.codex/skills`：Codex 全局通用技能，当前共 `7` 个（`2` 个治理 core skill + `5` 个 `.system` 技能）
+4. 仓库内 `.codex/skills/`：当前项目本地适配器技能，默认由 [.codex/skills/README.md](__PROJECT_ROOT__/.codex/skills/README.md) 统一说明
 
 按来源区分如下：
 
 ### 2.1 gstack
 
 - 来源仓库：`https://github.com/garrytan/gstack`
-- 本地源码目录：[~/gstack](/Users/sunlizhou/gstack)
-- 全局 skill 目录：[~/.codex/skills](/Users/sunlizhou/.codex/skills)
+- 本地源码目录：当前本地拷贝直接位于 [~/.claude/skills/gstack](/Users/sunlizhou/.claude/skills/gstack)
+- 全局 skill 目录：[~/.claude/skills/gstack](/Users/sunlizhou/.claude/skills/gstack)
 - 命名特征：以 `gstack-` 开头
 - 主要定位：
   - 更像“一套完整的软件交付流程工具箱”
@@ -33,9 +34,9 @@
 ### 2.2 agency-agents
 
 - 来源仓库：`https://github.com/msitarzewski/agency-agents`
-- 本地源码目录：[~/agency-agents](/Users/sunlizhou/agency-agents)
-- 转换后来源目录：[~/agency-agents/integrations/antigravity](/Users/sunlizhou/agency-agents/integrations/antigravity)
-- 全局 skill 目录：[~/.codex/skills](/Users/sunlizhou/.codex/skills)
+- 本地源码目录：Agent 源码同步来自 `~/.skillshub` 下的多个 `agency-*` 目录，实际调度时直接从 `[~/.skillshub](/Users/sunlizhou/.skillshub)` 下读取。
+- 转换后来源目录：同上（`~/.skillshub` 里已经按 `agency-*` 命名完成适配，不再需要额外转换步骤）。
+- 全局 skill 目录：[~/.skillshub](/Users/sunlizhou/.skillshub)
 - 命名特征：以 `agency-` 开头
 - 主要定位：
   - 更像“角色型专家库”
@@ -44,9 +45,10 @@
 ### 2.3 Codex 自带系统 skills
 
 - 目录：[~/.codex/skills/.system](/Users/sunlizhou/.codex/skills/.system)
+- 同目录下还保留 `ai-doc-ops-core` 与 `doc-governance-core` 两个全局治理 core skill，供项目 adapter 复用
 - 主要定位：
   - Codex 官方自带能力
-  - 偏安装、脚手架、OpenAI 文档查询等系统级辅助
+  - 偏安装、脚手架、OpenAI 文档查询和通用治理骨架等系统级辅助
 
 ## 3. 命名规则说明
 
@@ -70,7 +72,7 @@
 
 ## 4. gstack 全局 Skills 说明
 
-当前已安装的 `gstack` 全局 skill 共 `26` 个。
+当前常用的 `gstack` 子 skill 共 `26` 个；此外目录中还保留总入口和少量辅助技能（例如 `codex`、`connect-chrome`、`design-html`、`design-shotgun`、`learn`），本文重点说明最常用的一组。
 
 ### 4.1 规划与方案评审
 
@@ -446,8 +448,10 @@
 
 ## 6. Codex 自带系统 Skills
 
-当前系统自带 skills 共 `4` 个：
+当前系统自带 skills 共 `5` 个：
 
+- `imagegen`
+  - 用于生成或编辑位图类图片资源，适合做插画、素材、透明背景图和视觉变体。
 - `openai-docs`
   - 用于查询和使用 OpenAI 官方文档，适合 OpenAI API、模型选择、官方用法说明等问题。
 - `plugin-creator`
@@ -463,24 +467,23 @@
 
 - 全局 skill 目录：
   - [~/.codex/skills](/Users/sunlizhou/.codex/skills)
-- gstack 源码目录：
-  - [~/gstack](/Users/sunlizhou/gstack)
-- agency-agents 源码目录：
-  - [~/agency-agents](/Users/sunlizhou/agency-agents)
-- agency 转换产物目录：
-  - [~/agency-agents/integrations/antigravity](/Users/sunlizhou/agency-agents/integrations/antigravity)
+- gstack 使用目录：
+  - [~/.claude/skills/gstack](/Users/sunlizhou/.claude/skills/gstack)
+- gstack 备份/镜像目录：
+  - [~/.skillshub/gstack](/Users/sunlizhou/.skillshub/gstack)
+- agency skills 目录：
+  - [~/.skillshub](/Users/sunlizhou/.skillshub)
+- 当前仓库项目本地 skills：
+  - [.codex/skills/README.md](__PROJECT_ROOT__/.codex/skills/README.md)
 
 ### 7.2 升级方式建议
 
 - 升级 `gstack`
-  - 进入 [~/gstack](/Users/sunlizhou/gstack)
-  - 拉取最新代码
-  - 重新执行 `./setup --host codex`
+  - 先核对 [~/.claude/skills/gstack](/Users/sunlizhou/.claude/skills/gstack) 与 [~/.skillshub/gstack](/Users/sunlizhou/.skillshub/gstack) 的当前状态
+  - 如需升级，优先按你当前维护流程刷新这两个目录，再重启 Codex
 - 升级 `agency-agents`
-  - 进入 [~/agency-agents](/Users/sunlizhou/agency-agents)
-  - 拉取最新代码
-  - 重新执行 `./scripts/convert.sh --tool antigravity`
-  - 重新刷新 `~/.codex/skills` 中的 `agency-*` 链接
+  - 检查 [~/.skillshub](/Users/sunlizhou/.skillshub) 下对应 `agency-*` 目录
+  - 按你当前的同步流程刷新目标 skills 后，再重启 Codex
 
 ### 7.3 生效说明
 
@@ -1000,6 +1003,8 @@ agency-product-manager
 - agent 运行期间，主线程优先做明确不重叠的本地工作，减少碎片化短轮询
 - 对承担实质性任务的子 agent，首次等待窗口默认 `10` 分钟起步；构建、测试、联调、大实现或大文档整理类任务，默认用更长等待窗口，不再频繁短轮询
 - 如果复盘结论改变了 agent / skill 的默认选型或协作方式，必须同步更新本文件
+- 如果同一关键路径上连续出现 `stream disconnected`、`429`、`503` 这类平台级 agent 故障，默认不再串行追加多个 reviewer 重试；主线程先切回本地收口，再在稳定结果上补 `1` 个替代复核
+- 对部署、发版、升级 SQL、联调排障类任务，reviewer agent 更适合审剩余风险，不适合替代主线程完成基础预检；主线程应先做目标环境、关键脚本和最小验证链路的无副作用检查
 
 ### 12.5 如果 agent 或 skill 发生变化
 
@@ -1018,25 +1023,37 @@ agency-product-manager
 
 所以后续只要 agent / skill 体系变化，本文件必须同步补充修改。
 
-## 13. 项目专属 Skills
+## 13. 项目专属 Skills 与 Hooks
 
-除了全局安装的 `gstack-*`、`agency-*` 和 `.system/*` 外，本项目还在 `.codex/skills/` 目录下维护了项目专属 skills。
+除了全局安装的 `gstack-*`、`agency-*` 和 `.system/*` 外，本项目还在仓库内维护了项目本地 AI 执行层。
 
-这些 skills 用于强化项目核心规则的执行，与全局 agent / skill 配合使用。
+当前项目本地 AI 执行层分成三块：
 
-### 13.1 项目专属 Skills 清单
+1. `.codex/skills/`：当前默认主入口，只放项目 adapter skills
+2. `.claude/skills/`：历史保留、仍可复用的辅助 skills，默认不作为主入口
+3. `.claude/scripts/ai-exec-hooks/`：只负责提醒、检查、收集的轻量 hooks，不承接权威规则正文
+
+### 13.1 `.codex/skills/` 主 adapter 清单
 
 | Skill | 用途 | 触发场景 |
 |-------|------|----------|
 | `project-ai-doc-ops` | 项目总入口，负责阅读路径、任务分型、门禁节奏与复核闭环 | 几乎所有正式仓库任务的起步阶段 |
 | `project-doc-governance` | 文档治理专项，负责正式文档路由、实施门禁与文档评审闭环 | 写需求、规则、UI、实施、数据库/API 文档或进入代码前的治理判断 |
 
+项目本地 skill 索引见：
+
+- [.codex/skills/README.md](__PROJECT_ROOT__/.codex/skills/README.md)
+- [.claude/skills/README.md](__PROJECT_ROOT__/.claude/skills/README.md)
+- [.claude/scripts/ai-exec-hooks/README.md](__PROJECT_ROOT__/.claude/scripts/ai-exec-hooks/README.md)
+
 ### 13.2 分层关系
 
-当前项目 skill 体系已经拆成两层：
+当前项目本地 AI 执行层已经拆成三层：
 
 - 全局 core skills：放在 `~/.codex/skills/`，负责跨项目可复用的方法论骨架
 - 项目 adapter skills：放在仓库 `.codex/skills/`，负责当前项目的真实路径、真实文档入口和项目细则
+- 项目辅助 skills：放在仓库 `.claude/skills/`，负责补充性提醒、历史试点保留和局部辅助，不替代主 adapter
+- 项目轻量 hooks：放在仓库 `.claude/scripts/ai-exec-hooks/`，负责启动检查、门禁提醒、收尾提醒和候选收集
 
 当前推荐对应关系：
 
@@ -1049,7 +1066,21 @@ agency-product-manager
 - 换电脑时，先同步全局 core skills，再拉取具体仓库中的项目 adapter
 - 通用方法论升级，优先更新全局 core；项目落地规则升级，优先更新项目 adapter；跨层规则才双向同步
 
-### 13.3 项目专属 Skills 说明
+权威源边界：
+
+- 正式规则正文优先写在 `doc/01-规范标准/` 或 `doc/02-标准操作手册/`
+- 项目 adapter skill 负责把 AI 路由到正确入口，并提醒门禁与协作节奏
+- `.claude/skills/` 只做辅助层，不应与 `.codex/skills/` 争夺默认入口
+- hooks 只做提醒、检查、收集，不自动改正式规则、不自动下最终结论
+- project skill 不应与正式文档平行维护同一条完整规则
+- 如果 agent / skill 行为升级会影响正式口径，先更新正式文档，再更新 skill，再补升级日志
+
+对应规则见：
+
+- [文档、SOP、模板与Skill职责边界规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/文档、SOP、模板与Skill职责边界规范.md)
+- [文档与skill去重治理规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/文档与skill去重治理规范.md)
+
+### 13.3 `.codex/skills/` 主 adapter 说明
 
 #### project-ai-doc-ops
 
@@ -1060,6 +1091,7 @@ agency-product-manager
 - 先继承全局 `ai-doc-ops-core` 的通用骨架
 - 先按入口链建立上下文，再决定往哪类正式文档或执行阶段推进
 - 先判定任务属于文档治理、预览先行、数据库/API 设计、实施开发、SOP 执行还是问题排查
+- 遇到问题修复或缺陷收口时，先判断主归档层是当前版本包、`04-问题总结/`、`05-升级日志/` 还是 `02-标准操作手册/`
 - 关键产出默认采用“主 agent + 独立复核 agent + 主线程收口”
 - 影响既有正式页面时，先走预览页与 UI 确认，再进入数据库/API 与实施文档阶段
 
@@ -1075,11 +1107,25 @@ agency-product-manager
 - 正式文档必须路由到新的分层 `doc/` 结构
 - 没有已确认实施文档，不进入正式代码修改
 - 需求、规则、UI、数据库/API、实施文档等关键正式输出，默认都要独立复核
+- 问题修复文档默认先做归档判定，不把单个 Bug 直接升级成新版本包
 - 既有正式页面改动遵循预览先行、页面确认后再进数据库/API 的节奏
 
 详细规则见：[.codex/skills/project-doc-governance/SKILL.md](__PROJECT_ROOT__/.codex/skills/project-doc-governance/SKILL.md)
 
-### 13.4 项目专属 Skills 与全局 Skills 配合
+### 13.4 `.claude/skills/` 辅助层说明
+
+当前 `.claude/skills/` 默认按状态分两类管理：
+
+- `辅助可用`：仍可在当前流程中按需补充使用
+- `历史试点 / 非默认`：只保留追溯价值，不作为当前默认调用入口
+
+当前使用原则：
+
+- 先走 `.codex/skills/` 主 adapter
+- 再按需补 `.claude/skills/` 的辅助 skill
+- 如果辅助 skill 与正式文档或 `.codex/skills/` 主 adapter 冲突，以正式文档和主 adapter 为准
+
+### 13.5 项目专属 Skills 与全局 Skills 配合
 
 推荐顺序：
 
@@ -1126,13 +1172,21 @@ project-doc-governance（项目专属）→ 判断回填位置
 project-ai-doc-ops（项目专属）→ 回填与收口
 ```
 
-### 13.5 项目专属 Skills 目录位置
+### 13.6 项目本地目录位置
 
-- 目录：[.codex/skills/](__PROJECT_ROOT__/.codex/skills/)
+- 主 adapter：[.codex/skills/](__PROJECT_ROOT__/.codex/skills/)
+- 辅助 skills：[.claude/skills/](__PROJECT_ROOT__/.claude/skills/)
+- 轻量 hooks：[.claude/scripts/ai-exec-hooks/](__PROJECT_ROOT__/.claude/scripts/ai-exec-hooks/)
+- 本地索引：
+  - [.codex/skills/README.md](__PROJECT_ROOT__/.codex/skills/README.md)
+  - [.claude/skills/README.md](__PROJECT_ROOT__/.claude/skills/README.md)
+  - [.claude/scripts/ai-exec-hooks/README.md](__PROJECT_ROOT__/.claude/scripts/ai-exec-hooks/README.md)
 
-### 13.6 项目专属 Skills 维护规则
+### 13.7 项目专属 Skills 与 Hooks 维护规则
 
-- 新增 skill 后，更新本章节清单
-- Skill 内容变化后，同步更新 SKILL.md
-- Skill 废弃后，从本章节删除
-- 与全局 skill 有重叠或冲突时，优先使用项目专属 skill
+- 新增 `.codex/skills/` 或 `.claude/skills/` 条目后，更新本章节与对应 README
+- Skill 内容变化后，同步更新对应 `SKILL.md`
+- Hook 清单变化后，同步更新 hooks README 与挂载配置
+- 如变更影响正式规则，同步更新正式文档与 AI 规则升级日志
+- 历史试点 skill 默认先标记为 `历史试点 / 非默认`，确认无引用后再移除
+- 与全局 skill 有重叠或冲突时，优先以正式文档为准，再判断是否保留项目本地 skill / hook

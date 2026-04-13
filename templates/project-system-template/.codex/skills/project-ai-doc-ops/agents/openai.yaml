@@ -1,7 +1,7 @@
 interface:
   display_name: "项目AI总入口"
   short_description: "按项目入口规则统筹阅读路径任务分型门禁与独立复核闭环"
-  default_prompt: "Use $project-ai-doc-ops to classify this repository task, choose the correct reading path, and enforce the document-first workflow before deeper work."
+  default_prompt: "Use $project-ai-doc-ops as the repository adapter to classify the task, route to the correct formal docs first, and enforce the document-first workflow. Treat formal docs as the authority source and use this skill for routing, stage judgment, and execution reminders."
 
 policy:
   allow_implicit_invocation: true
