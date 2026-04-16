@@ -11,5 +11,5 @@
 3. [页面连通性测试/README.md](__PROJECT_ROOT__/doc/02-标准操作手册/页面连通性测试/README.md)
 4. [页面点击与业务校验测试/README.md](__PROJECT_ROOT__/doc/02-标准操作手册/页面点击与业务校验测试/README.md)
 5. [回滚与应急处理/README.md](__PROJECT_ROOT__/doc/02-标准操作手册/回滚与应急处理/README.md)
-6. [AI执行试点/README.md](__PROJECT_ROOT__/doc/02-标准操作手册/AI执行试点/README.md)
+6. [AI执行落地/README.md](__PROJECT_ROOT__/doc/02-标准操作手册/AI执行落地/README.md)
 7. [AI执行模板/README.md](__PROJECT_ROOT__/doc/02-标准操作手册/AI执行模板/README.md)

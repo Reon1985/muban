@@ -5,16 +5,17 @@
 - 全局 core skills
 - 项目 adapter skills
 - 项目专属 hooks 与脚本入口
-- 状态机与交接机制
 - 文档分层结构与入口导航
+- 关键任务自动主 agent / 独立复核 agent 协作规则
 - AI 执行增强层规则、模板、SOP 与升级日志骨架
+- 跨会话连续性辅助资产（如 `.project_state.json`、`.handoff/`）
 
 ## 1. 仓库结构
 
 - `global-skills/`
   放可直接安装到 `~/.codex/skills/` 的全局 core skills
 - `templates/project-system-template/`
-  放完整项目模板，包含项目 skills、hooks、文档体系、状态机与脚本
+  放完整项目模板，包含项目 skills、hooks、文档体系与辅助连续性脚本
 - `scripts/install_global_skills.sh`
   把 `global-skills/` 安装到当前电脑的 `~/.codex/skills/`
 - `scripts/bootstrap_project_template.py`
@@ -54,8 +55,9 @@ python3 scripts/bootstrap_project_template.py   --target /absolute/path/to/your-
 6. `.claude/skills/README.md` 与项目辅助 skill 体系
 7. `pre-doc-skill-sync-check.sh` 在内的轻量 hook 与轻量自动学习脚本
 8. 测试报告驱动问题批量收口规则、问题修复模板与发版门禁
-9. 文档分层、状态机、版本包、升级日志骨架
+9. 文档分层、版本包、升级日志与跨会话连续性辅助骨架
 10. AI 执行增强层长期规则、模板与试点资料
+11. 关键任务默认采用“开始前自动选择主 agent -> 主结果形成后自动选择独立复核 agent -> 主线程统一收口”的协作骨架
 
 ## 4. 维护原则
 
@@ -63,3 +65,4 @@ python3 scripts/bootstrap_project_template.py   --target /absolute/path/to/your-
 2. 项目级执行规则优先更新 `templates/project-system-template/`
 3. 任何 hook、规则、模板或治理机制升级，优先同步到模板仓库，再同步到业务仓库
 4. 业务正文、业务测试报告、业务部署细节不要带回模板仓库，模板仓库只保留可迁移骨架
+5. 文档入口链和正式规范是共享模板的主权威来源；`.project_state.json`、`.handoff/` 等只作为跨会话连续性辅助，不应压过正式文档入口

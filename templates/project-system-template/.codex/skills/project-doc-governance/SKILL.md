@@ -79,6 +79,8 @@ Within this repository, classify every request into one of three types before pr
 10. For approved code work, read [doc/01-规范标准/文档治理/AI阅读路径规范/current/开发规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/开发规范.md) before editing.
 11. Treat that development-stage entry document as authoritative for coding-stage rules.
 12. When a task produces a key formal output, default to `1` main agent plus `1` independent review agent before treating that output as the next-stage baseline.
+12.1 For every key task, automatically choose the most appropriate main agent before starting substantive work.
+12.2 After the main result is produced, automatically choose the most appropriate independent review agent before treating the task as complete.
 13. Key formal outputs include requirement baselines, page lists, rule lists, UI plans, database designs, API lists, implementation docs, test conclusions, and code-bearing implementation packages.
 14. Independent review is not a formality. The review result should clearly say whether there are omissions, conflicts, implementation gaps, or reasons the output should not advance yet.
 15. Lightweight typo, link, or pure formatting fixes can stay on self-check only. Anything that changes scope, rules, structure, data, APIs, implementation boundaries, or rollout conclusions still needs independent review.

@@ -1,6 +1,8 @@
 # AI Exec Hooks
 
-本目录承接 `__PROJECT_NAME__` 仓库第一版轻量 hook 与轻量自动学习试点脚本。
+本目录承接 `__PROJECT_NAME__` 仓库当前默认挂载的轻量 hook 与自动学习脚本。
+
+当前目录直接负责本仓库实际挂载的本地脚本，用于补足 AI 执行层的提醒、检查、收集与回填辅助。
 
 当前状态：
 
@@ -42,4 +44,4 @@ bash .claude/scripts/ai-exec-hooks/candidate-learning-capture.sh "AI执行增强
 1. `pre-release-batch-gate.sh` 只在命中发版类 Bash 命令时生效
 2. 对测试报告驱动修复场景，脚本检查的是“字段有实际内容”，不是只看标题是否存在
 3. 如需例外放行，实施文档中必须写出真实豁免原因，空白模板不会放行
-4. `pre-doc-skill-sync-check.sh` 只做 AI 执行层同步提醒，不自动阻断、不自动改正式文档
+4. `pre-doc-skill-sync-check.sh` 只做本仓库 AI 执行层同步提醒，不自动阻断、不自动改正式文档

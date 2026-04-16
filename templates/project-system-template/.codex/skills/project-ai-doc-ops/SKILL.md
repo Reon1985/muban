@@ -14,13 +14,14 @@ This adapter provides the repository-specific reading path, entry documents, cur
 
 If the same method is migrated to another project, keep the global core and rewrite only the adapter.
 
-This adapter answers five repository-specific questions before work begins:
+This adapter answers six repository-specific questions before work begins:
 
 1. which `__PROJECT_NAME__` docs to read first
 2. where the current version baseline lives
 3. whether the task should stop at docs, stay in preview, or can enter implementation
 4. which repo-local specialist docs should be loaded next
 5. when to hand off to `project-doc-governance`
+6. which system-level explanation docs define the current collaboration model
 
 ## Start Here
 
@@ -85,11 +86,13 @@ Apply the global core workflow with these repository specifics:
 1. start from the listed entry docs, not from scattered code reads
 2. identify the current version and target module
 3. classify the task type
-4. for formal-document routing or implementation gating, load `project-doc-governance`
-5. for existing-page changes, keep the work in preview until UI is confirmed
-6. for code work, require the approved implementation document plus the current development-stage rules
-7. finish with validation, backfill, and change-log updates when required
-8. if the task changes project-local skills, hooks, or AI execution entry docs, treat it as an execution-layer governance change and check the repository AI layer indexes together
+4. if the task is a key task, automatically choose the most appropriate main agent first
+5. for formal-document routing or implementation gating, load `project-doc-governance`
+6. for existing-page changes, keep the work in preview until UI is confirmed
+7. for code work, require the approved implementation document plus the current development-stage rules
+8. before treating a key result as complete, automatically choose an appropriate independent review agent
+9. finish with validation, backfill, and change-log updates when required
+10. if the task changes project-local skills, hooks, or AI execution entry docs, treat it as an execution-layer governance change and check the repository AI layer indexes together
 
 ## Non-Negotiable Rules
 
@@ -110,6 +113,7 @@ Default collaboration model for this repository:
 3. the main thread sets boundaries, watches the critical path, and merges the result
 4. do not let the main agent review itself through a near-identical role
 5. do not over-process tiny, non-semantic edits
+6. for every key task, main-agent selection happens before execution and review-agent selection happens after the main result is produced
 
 ## Skill Boundary
 

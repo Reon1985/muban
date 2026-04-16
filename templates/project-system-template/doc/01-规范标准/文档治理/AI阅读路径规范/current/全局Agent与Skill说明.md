@@ -1030,7 +1030,7 @@ agency-product-manager
 当前项目本地 AI 执行层分成三块：
 
 1. `.codex/skills/`：当前默认主入口，只放项目 adapter skills
-2. `.claude/skills/`：历史保留、仍可复用的辅助 skills，默认不作为主入口
+2. `.claude/skills/`：当前仍可复用的辅助 skills，默认不作为主入口
 3. `.claude/scripts/ai-exec-hooks/`：只负责提醒、检查、收集的轻量 hooks，不承接权威规则正文
 
 ### 13.1 `.codex/skills/` 主 adapter 清单
@@ -1052,7 +1052,7 @@ agency-product-manager
 
 - 全局 core skills：放在 `~/.codex/skills/`，负责跨项目可复用的方法论骨架
 - 项目 adapter skills：放在仓库 `.codex/skills/`，负责当前项目的真实路径、真实文档入口和项目细则
-- 项目辅助 skills：放在仓库 `.claude/skills/`，负责补充性提醒、历史试点保留和局部辅助，不替代主 adapter
+- 项目辅助 skills：放在仓库 `.claude/skills/`，负责补充性提醒和局部辅助，不替代主 adapter
 - 项目轻量 hooks：放在仓库 `.claude/scripts/ai-exec-hooks/`，负责启动检查、门禁提醒、收尾提醒和候选收集
 
 当前推荐对应关系：
@@ -1114,10 +1114,7 @@ agency-product-manager
 
 ### 13.4 `.claude/skills/` 辅助层说明
 
-当前 `.claude/skills/` 默认按状态分两类管理：
-
-- `辅助可用`：仍可在当前流程中按需补充使用
-- `历史试点 / 非默认`：只保留追溯价值，不作为当前默认调用入口
+当前 `.claude/skills/` 默认只保留 `辅助可用` 的项目辅助 skills。
 
 当前使用原则：
 
@@ -1188,5 +1185,5 @@ project-ai-doc-ops（项目专属）→ 回填与收口
 - Skill 内容变化后，同步更新对应 `SKILL.md`
 - Hook 清单变化后，同步更新 hooks README 与挂载配置
 - 如变更影响正式规则，同步更新正式文档与 AI 规则升级日志
-- 历史试点 skill 默认先标记为 `历史试点 / 非默认`，确认无引用后再移除
+- 共享模板中的废弃 skill 应在确认无引用后直接移除，不长期保留历史试点占位
 - 与全局 skill 有重叠或冲突时，优先以正式文档为准，再判断是否保留项目本地 skill / hook
