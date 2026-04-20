@@ -14,6 +14,7 @@ CLAUDE.md
 → doc/00-入口/README.md
 → doc/00-入口/AI执行入口.md
 → doc/00-入口/当前生效版本说明.md
+→ doc/01-规范标准/文档治理/AI阅读路径规范/current/README.md
 → 目标标准 / 目标SOP / 目标版本包
 ```
 
@@ -23,9 +24,12 @@ CLAUDE.md
 2. 文档优先：没有实施文档，不默认改代码
 3. 关键任务协作优先：开始前自动选择最合适的主 agent，主结果形成后自动选择独立复核 agent
 4. 探索必回填：新结论必须回写正式文档
-5. SOP 优先：部署、发版、测试优先读 `02-标准操作手册/`
-6. AI 执行层联动：如果修改 `.codex/skills/`、`.claude/skills/`、`.claude/scripts/ai-exec-hooks/` 或 AI 治理文档，默认同步检查它们的 README 和升级日志
-7. 跨会话连续性辅助：`.project_state.json` 与 `.handoff/` 用于辅助续接上下文，但不替代正式文档入口链
+5. 不要兜底：需求、字段、接口、权限、版本口径不明确时，不默认靠猜测、假数据、临时兼容或聊天结论硬顶过去
+6. 写代码前先定边界：先确认版本、实施文档、改动范围、最小验证命令和需要回填的文档
+7. SOP 优先：部署、发版、测试优先读 `02-标准操作手册/`
+8. AI 执行层联动：如果修改 `.codex/skills/`、`.claude/skills/`、`.claude/scripts/ai-exec-hooks/` 或 AI 治理文档，默认同步检查它们的 README 和升级日志
+9. 跨会话连续性辅助：`.project_state.json` 与 `.handoff/` 用于辅助续接上下文，但不替代正式文档入口链
+10. 任务机按需启用：只有项目明确启用时，才把 `task-machine/` 相关约束作为硬门禁
 
 ## 4. 当前仓库结构速查
 
@@ -35,6 +39,7 @@ CLAUDE.md
 .codex/        项目 adapter skills
 .handoff/      交接单目录（跨会话辅助）
 .project_state.json  连续性状态记录（跨会话辅助）
+task-machine/  任务机说明与运行约束（可选增强层）
 
 doc/
   00-入口/
@@ -50,8 +55,18 @@ doc/
 
 先读本文件，再进入 `doc/README.md` 和 `doc/00-入口/README.md`，关键任务默认先选主 agent，主结果完成后再选独立复核 agent，后续所有正式结论默认进入分层文档体系。
 
+进入正式开发前，至少还要确认：
+
+1. 当前版本和当前任务入口
+2. 实施文档是否已批准
+3. 改动是否在批准范围内
+4. 当前最小验证命令和回填文档清单
+
+如果上述信息不明确，默认先补文档或例外声明，不直接写实现。
+
 如果本轮任务直接修改 AI 执行体系，再补读：
 
 1. `.codex/skills/README.md`
 2. `.claude/skills/README.md`
 3. `.claude/scripts/ai-exec-hooks/README.md`
+4. `task-machine/README.md`

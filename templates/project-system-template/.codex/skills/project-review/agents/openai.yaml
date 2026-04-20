@@ -1,0 +1,7 @@
+interface:
+  display_name: "项目复核收口"
+  short_description: "输出统一的项目级复核结论和 go/no-go 判断"
+  default_prompt: "Use $project-review to format the review result, check omissions and risks, and state clearly whether the project may advance."
+
+policy:
+  allow_implicit_invocation: true

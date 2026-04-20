@@ -31,6 +31,8 @@
 
 1. [project-ai-doc-ops/SKILL.md](__PROJECT_ROOT__/.codex/skills/project-ai-doc-ops/SKILL.md)
 2. [project-doc-governance/SKILL.md](__PROJECT_ROOT__/.codex/skills/project-doc-governance/SKILL.md)
+3. [project-review/SKILL.md](__PROJECT_ROOT__/.codex/skills/project-review/SKILL.md)
+4. [project-task-machine/SKILL.md](__PROJECT_ROOT__/.codex/skills/project-task-machine/SKILL.md)
 
 关联辅助层入口：
 
@@ -45,7 +47,9 @@
 
 1. 先用 `project-ai-doc-ops` 判断任务阶段和阅读入口
 2. 涉及正式文档路由、版本承接、实施门禁时，再用 `project-doc-governance`
-3. 如果正式文档已经足够清楚，不强制额外展开 skill 说明
+3. 关键产出完成后，如需统一复核结论，使用 `project-review`
+4. 项目已启用连续性资产或任务机时，使用 `project-task-machine`
+5. 如果正式文档已经足够清楚，不强制额外展开 skill 说明
 
 一句话：
 
@@ -84,6 +88,22 @@
 1. 正式规则以 `doc/` 中的正式文档为准
 2. 本文件只保留最小 skill 入口说明，不平行维护完整规则正文
 
+### 4.3 `project-review`
+
+适合场景：
+
+1. 关键产出主结果已经形成
+2. 需要输出统一 `go / no-go` 复核结论
+3. 需要明确遗漏项、冲突项、风险项和是否允许推进
+
+### 4.4 `project-task-machine`
+
+适合场景：
+
+1. 项目明确启用了 TraceID、`.project_state.json`、`.handoff/` 等连续性资产
+2. 关键任务启动、续接或收尾时需要做门禁判断
+3. 需要判断当前任务是否允许进入下一阶段
+
 ---
 
 ## 5. 新增 Skill 的默认规则
@@ -114,3 +134,4 @@
 4. [AI能力与规则升级日志.md](__PROJECT_ROOT__/doc/05-升级日志/AI执行体系/AI能力与规则升级日志.md)
 5. [.claude/skills/README.md](__PROJECT_ROOT__/.claude/skills/README.md)
 6. [.claude/scripts/ai-exec-hooks/README.md](__PROJECT_ROOT__/.claude/scripts/ai-exec-hooks/README.md)
+7. [task-machine/README.md](__PROJECT_ROOT__/task-machine/README.md)

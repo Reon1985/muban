@@ -1,0 +1,7 @@
+interface:
+  display_name: "项目任务机门禁"
+  short_description: "在任务机已启用时检查 TraceID、handoff 和推进门禁"
+  default_prompt: "Use $project-task-machine to check the current task continuity assets, identify missing gating items, and say clearly whether the task may continue."
+
+policy:
+  allow_implicit_invocation: true

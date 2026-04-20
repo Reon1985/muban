@@ -79,23 +79,22 @@
 
 ```text
 doc/         文档主目录
-java_front/  后端工程（历史命名保留）
-web_back/    前端工程（历史命名保留）
+前端工程目录  在项目初始化后补充
+后端工程目录  在项目初始化后补充
 ```
 
 代码分层：
 
 ```text
-web_back/src/
-  platform/shell/         项目壳层
-  modules/base-setting/   基础设置增强包
-  modules/business/pm/    项目业务模块
+前端定位文档
+→ 前端目录
+→ 目标模块目录
+→ 目标文件
 
-java_front/
-  .../module/api/base_setting
-  .../module/biz/base_setting
-  .../module/api/pm
-  .../module/biz/pm
+后端定位文档
+→ 后端目录
+→ 目标模块目录
+→ 目标文件
 ```
 
 ## 权威文档速查

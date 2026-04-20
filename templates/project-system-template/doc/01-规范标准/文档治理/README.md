@@ -17,7 +17,7 @@
 
 建议按下面顺序建立上下文：
 
-1. [AI阅读路径规范/current/AI协作与项目运作体系说明.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/AI协作与项目运作体系说明.md)
+1. [AI阅读路径规范/current/README.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/README.md)
 2. [AI阅读路径规范/current/SOUL.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/SOUL.md)
 3. [AI阅读路径规范/current/WORKFLOW.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/WORKFLOW.md)
 4. [AI阅读路径规范/current/AGENTS.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/AGENTS.md)
@@ -29,19 +29,19 @@
 
 1. [AI阅读路径规范/current/全局Agent与Skill说明.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/全局Agent与Skill说明.md)
 2. [AI阅读路径规范/current/文档与skill去重治理规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/文档与skill去重治理规范.md)
-3. [AI阅读路径规范/current/AI项目管理增强层实施方案.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/AI项目管理增强层实施方案.md)
+3. [AI阅读路径规范/current/文档、SOP、模板与Skill职责边界规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/文档、SOP、模板与Skill职责边界规范.md)
 
 ## 4. 执行与治理规则
 
 如果当前任务涉及执行骨架、接入、知识隔离、自动学习边界或批量收口规则，按需看：
 
-1. [AI阅读路径规范/current/复杂任务蓝图规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/复杂任务蓝图规范.md)
-2. [AI阅读路径规范/current/新项目接入规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/新项目接入规范.md)
-3. [AI阅读路径规范/current/项目级知识隔离规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/项目级知识隔离规范.md)
-4. [AI阅读路径规范/current/轻量自动学习与自动进化边界规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/轻量自动学习与自动进化边界规范.md)
-5. [AI阅读路径规范/current/轻量hook清单设计规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/轻量hook清单设计规范.md)
-6. [AI阅读路径规范/current/测试报告驱动问题批量收口规则.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/测试报告驱动问题批量收口规则.md)
-7. [AI阅读路径规范/current/问题修复文档归档与执行规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/问题修复文档归档与执行规范.md)
+1. [AI阅读路径规范/current/测试报告驱动问题批量收口规则.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/测试报告驱动问题批量收口规则.md)
+2. [AI阅读路径规范/current/问题修复文档归档与执行规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/问题修复文档归档与执行规范.md)
+3. [AI阅读路径规范/current/复杂任务蓝图规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/复杂任务蓝图规范.md)
+4. [AI阅读路径规范/current/新项目接入规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/新项目接入规范.md)
+5. [AI阅读路径规范/current/项目级知识隔离规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/项目级知识隔离规范.md)
+6. [AI阅读路径规范/current/轻量自动学习与自动进化边界规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/轻量自动学习与自动进化边界规范.md)
+7. [AI阅读路径规范/current/轻量hook清单设计规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/轻量hook清单设计规范.md)
 
 ## 5. 结构与回填规则
 

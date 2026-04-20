@@ -34,21 +34,27 @@ Read these files first:
 - [doc/00-入口/README.md](__PROJECT_ROOT__/doc/00-入口/README.md)
 - [doc/00-入口/AI执行入口.md](__PROJECT_ROOT__/doc/00-入口/AI执行入口.md)
 - [doc/00-入口/当前生效版本说明.md](__PROJECT_ROOT__/doc/00-入口/当前生效版本说明.md)
+- [doc/01-规范标准/文档治理/AI阅读路径规范/current/README.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/README.md)
 - [doc/01-规范标准/文档治理/AI阅读路径规范/current/SOUL.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/SOUL.md)
-- [doc/01-规范标准/文档治理/AI阅读路径规范/current/AGENTS.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/AGENTS.md)
 - [doc/01-规范标准/文档治理/AI阅读路径规范/current/WORKFLOW.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/WORKFLOW.md)
-- [doc/01-规范标准/文档治理/AI阅读路径规范/current/AI协作与项目运作体系说明.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/AI协作与项目运作体系说明.md)
+- [doc/01-规范标准/文档治理/AI阅读路径规范/current/AGENTS.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/AGENTS.md)
 
 When the task involves agent / skill selection, skill governance, or authority-source decisions, also read:
 
 - [doc/01-规范标准/文档治理/AI阅读路径规范/current/全局Agent与Skill说明.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/全局Agent与Skill说明.md)
 - [doc/01-规范标准/文档治理/AI阅读路径规范/current/文档与skill去重治理规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/文档与skill去重治理规范.md)
+- [.codex/skills/project-review/SKILL.md](__PROJECT_ROOT__/.codex/skills/project-review/SKILL.md)
 
 When the task directly changes the repository AI execution layer, also read:
 
 - [.codex/skills/README.md](__PROJECT_ROOT__/.codex/skills/README.md)
 - [.claude/skills/README.md](__PROJECT_ROOT__/.claude/skills/README.md)
 - [.claude/scripts/ai-exec-hooks/README.md](__PROJECT_ROOT__/.claude/scripts/ai-exec-hooks/README.md)
+
+When the project enables continuity assets or task-machine gates, also read:
+
+- [task-machine/README.md](__PROJECT_ROOT__/task-machine/README.md)
+- [.codex/skills/project-task-machine/SKILL.md](__PROJECT_ROOT__/.codex/skills/project-task-machine/SKILL.md)
 
 Load detailed entry references only when needed:
 
@@ -90,9 +96,10 @@ Apply the global core workflow with these repository specifics:
 5. for formal-document routing or implementation gating, load `project-doc-governance`
 6. for existing-page changes, keep the work in preview until UI is confirmed
 7. for code work, require the approved implementation document plus the current development-stage rules
-8. before treating a key result as complete, automatically choose an appropriate independent review agent
-9. finish with validation, backfill, and change-log updates when required
-10. if the task changes project-local skills, hooks, or AI execution entry docs, treat it as an execution-layer governance change and check the repository AI layer indexes together
+8. before treating a key result as complete, automatically choose an appropriate independent review path
+9. if the project enables task-machine assets, check whether TraceID, handoff, and completion gates must be updated
+10. finish with validation, backfill, and change-log updates when required
+11. if the task changes project-local skills, hooks, or AI execution entry docs, treat it as an execution-layer governance change and check the repository AI layer indexes together
 
 ## Non-Negotiable Rules
 

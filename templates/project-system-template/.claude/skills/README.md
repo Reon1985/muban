@@ -9,13 +9,13 @@
 
 当前仓库的 AI 辅助层分为三块：
 
-- `/.codex/skills/`：当前 Codex 默认优先读取的项目本地 adapter skills，也是当前仓库主入口
-- `/.claude/skills/`：当前仍可复用的项目辅助 skills，默认不作为主入口
+- `/.codex/skills/`：当前 Codex 默认优先读取的项目本地治理 skills，也是当前仓库主入口
+- `/.claude/skills/`：当前仍可复用的项目辅助 skills，默认不作为权威规则入口
 - `/.claude/scripts/ai-exec-hooks/`：只负责提醒、检查、收集的轻量 hooks
 
 一句话：
 
-- 先走 `.codex/skills/`，再按需补 `.claude/skills/`。
+- 先走 `.codex/skills/` 和正式文档，再按需补 `.claude/skills/`。
 
 ## 2. 当前 Skills 清单
 
@@ -30,7 +30,7 @@
 
 状态说明：
 
-- `辅助可用`：可作为当前主流程的补充 skill 使用，但不替代 `.codex/skills/` 主 adapter
+- `辅助可用`：可作为当前主流程的补充 skill 使用，但不替代正式文档和 `.codex/skills/` 主治理层
 
 ## 3. 与全局 Skills 的关系
 
@@ -53,7 +53,7 @@
 
 推荐顺序：
 
-1. 先用 `.codex/skills/` 的项目 adapter 明确流程和规则
+1. 先用 `.codex/skills/` 的项目 skill 明确流程和规则
 2. 再用全局 `agency-*` 选择专业角色
 3. 再用全局 `gstack-*` 选择流程技能
 4. 最后按需补 `.claude/skills/` 中的辅助 skill 完成复盘、回填或局部检查
@@ -101,6 +101,6 @@ project-ai-doc-ops → 项目导航 → [探索] → 知识回填提醒
 
 - 新增 skill 后，更新本 README 清单
 - Skill 内容变化后，同步更新 SKILL.md
-- Skill 废弃后，优先同步移除 README、正式文档和相关引用，不在共享模板中长期保留历史试点壳
+- Skill 废弃后，优先同步移除 README、正式文档和相关引用，不在共享模板中长期保留重复入口
 - 与 `.codex/skills/` 主 adapter 有重叠或冲突时，优先使用 `.codex/skills/`
 - 与正式文档有重叠时，优先更新 `doc/` 中的权威正文，再回写本 README / 对应 SKILL

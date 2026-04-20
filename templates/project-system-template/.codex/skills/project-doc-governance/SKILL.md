@@ -26,7 +26,8 @@ Read these files first:
 - [doc/00-入口/AI执行入口.md](__PROJECT_ROOT__/doc/00-入口/AI执行入口.md)
 - [doc/00-入口/当前生效版本说明.md](__PROJECT_ROOT__/doc/00-入口/当前生效版本说明.md)
 - [doc/01-规范标准/文档治理/AI阅读路径规范/current/开发规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/开发规范.md)
-- [doc/01-规范标准/文档治理/知识回填规范/current/框架探索与知识回填规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/知识回填规范/current/框架探索与知识回填规范.md)
+- [doc/01-规范标准/文档治理/AI阅读路径规范/current/测试报告驱动问题批量收口规则.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/测试报告驱动问题批量收口规则.md)
+- [doc/01-规范标准/文档治理/AI阅读路径规范/current/问题修复文档归档与执行规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/AI阅读路径规范/current/问题修复文档归档与执行规范.md)
 - [doc/01-规范标准/文档治理/文档结构规范/current/doc目录结构与使用规范.md](__PROJECT_ROOT__/doc/01-规范标准/文档治理/文档结构规范/current/doc目录结构与使用规范.md)
 - [doc/项目文档总览.md](__PROJECT_ROOT__/doc/项目文档总览.md)
 

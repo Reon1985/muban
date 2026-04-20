@@ -356,7 +356,7 @@
 - `agency-sprint-prioritizer`：冲刺优先级专家，适合 backlog、排期、优先级和资源取舍。
 - `agency-trend-researcher`：趋势研究员，适合市场机会、竞争格局和趋势洞察。
 
-### 5.8 Project Management
+### 5.8 Delivery Coordination
 
 - `agency-experiment-tracker`：实验跟踪专家，适合 A/B test、实验节奏、结果追踪与验证。
 - `agency-jira-workflow-steward`：Jira 工作流守护者，适合 Jira 与 Git 流程的规范化和可追溯性。
@@ -879,7 +879,7 @@
 - 做设计表达：`design + gstack-design-review`
 - 做测试验收：`gstack-browse + gstack-qa + testing`
 - 做增长营销：`marketing + paid-media`
-- 做组织推进：`project-management + specialized`
+- 做组织推进：`delivery-coordination + specialized`
 
 ## 11. 使用建议
 

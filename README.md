@@ -1,6 +1,6 @@
-# AI Project Management System Template Repo
+# AI Governance Template Repo
 
-这个仓库是“AI 项目管理 2.0 体系”的可迁移模板仓库，目标是让你在另一台电脑或另一个项目里，直接复制并落地以下完整能力：
+这个仓库是可迁移的 AI 治理与文档体系模板仓库，目标是在另一台电脑或另一个项目里，直接复制并落地以下完整能力：
 
 - 全局 core skills
 - 项目 adapter skills
@@ -51,13 +51,15 @@ python3 scripts/bootstrap_project_template.py   --target /absolute/path/to/your-
 2. `doc-governance-core`
 3. `project-ai-doc-ops`
 4. `project-doc-governance`
-5. `.codex/skills/README.md` 与项目 adapter skill 索引
-6. `.claude/skills/README.md` 与项目辅助 skill 体系
-7. `pre-doc-skill-sync-check.sh` 在内的轻量 hook 与轻量自动学习脚本
-8. 测试报告驱动问题批量收口规则、问题修复模板与发版门禁
-9. 文档分层、版本包、升级日志与跨会话连续性辅助骨架
-10. AI 执行增强层长期规则、模板与试点资料
-11. 关键任务默认采用“开始前自动选择主 agent -> 主结果形成后自动选择独立复核 agent -> 主线程统一收口”的协作骨架
+5. `project-review`
+6. `project-task-machine`
+7. `.codex/skills/README.md` 与项目 skill 索引
+8. `.claude/skills/README.md` 与项目辅助 skill 体系
+9. `pre-doc-skill-sync-check.sh` 在内的轻量 hook 与轻量自动学习脚本
+10. 测试报告驱动问题批量收口规则、问题修复模板与发版门禁
+11. 文档分层、版本包、升级日志与跨会话连续性辅助骨架
+12. 关键任务默认采用“主 agent -> 独立复核 agent -> 主线程统一收口”的协作骨架
+13. 可选任务机资产（`.project_state.json`、`.handoff/`、`task-machine/`）
 
 ## 4. 维护原则
 
